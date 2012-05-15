@@ -1,0 +1,47 @@
+<h1>Todo:</h1>
+
+<%= form_tag view_completed_add_to_completed_path({}) %>
+
+<table>
+  <tr>
+    <td><%= link_to 'New Task', new_todo_list_path %><br /></td>
+    <td><%= link_to 'View Completed', view_completed_index_path %></td>
+    <td><%= submit_tag "Add To Completed" %></td>
+  </tr>
+</table>
+
+<table border="1">
+  <tr bgcolor="black" style="color:white">
+    <th></th>
+    <th>Description</th>
+    <th>Date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @todo_lists.each do |todo_list| %>
+  <% if not todo_list.completed %>
+  <% if @odd_element %><tr bgcolor="#0080FF"><% else %><tr bgcolor="#2ECCFA"><% end %>
+    <td bgcolor="black"><%= check_box_tag ':tasks[]', todo_list.id %></td>
+    <td><b><%= todo_list.description %></b></td>
+    <td><%= todo_list.date %></td>
+    <td><%= link_to 'Show', todo_list %></td>
+    <td><%= link_to 'Edit', edit_todo_list_path(todo_list) %></td>
+    <td><%= link_to 'Destroy', todo_list, confirm: 'Are you sure?', method: :delete, :style => "color:red" %></td>
+  </tr>
+  <% @odd_element = !@odd_element %>
+  <% end %>
+<% end %>
+</table>
+
+<br />
+
+<table>
+  <tr>
+    <td><%= link_to 'New Task', new_todo_list_path %><br /></td>
+    <td><%= link_to 'View Completed', view_completed_index_path %></td>
+    <td><%= submit_tag "Add To Completed" %></td>
+  </tr>
+</table>
+

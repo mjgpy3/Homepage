@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>InfoManager</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<table>
+  <tr>
+    <td><%= link_to 'Todo', todo_lists_path %></td>
+    <td><%= link_to 'Completed', view_completed_index_path %></td>
+    <td><%= link_to 'Python', python_runner_index_path %></td>
+  </tr>
+</table>
+
+<h3 style="color:green;"><%= notice %></h3>
+<h3 style="color:red;"><%= alert %></h3>
+
+<%= yield %>
+
+</body>
+</html>

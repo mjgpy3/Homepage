@@ -1,0 +1,24 @@
+<%= image_tag("pycon.png") %>
+
+<!-- Deals with printing the output code -->
+<% if not @output.nil? %>
+  <h3>Output:</h3>
+  <table>
+    <% @output.each() do |o| %>
+      <tr style="color:gray;"><td><i><%= o %></i></td></tr>
+    <% end %>
+  </table>
+<% end %>
+
+
+<!-- Deals with saving the file -->
+<%= form_tag python_runner_save_file_path do %>
+  <%= text_area_tag(:file_name, "", :size => "80x1") %>
+  <%= submit_tag "Save", :name => "selected"  %><br />
+
+<!-- Deals with getting the input code and running it -->
+<%= form_tag python_runner_run_python_code_path do %>
+  <%= text_area_tag(:code, @code, :size => "90x33") %><br />
+  <%= submit_tag "Run", :name => "selected" %>
+<% end %>
+<% end %>

@@ -1,0 +1,1086 @@
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "todo_lists"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "todo_lists" ("description", "date", "created_at", "updated_at", "id") VALUES ('MyText', '2012-04-05', '2012-04-05 07:33:01', '2012-04-05 07:33:01', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "todo_lists" ("description", "date", "created_at", "updated_at", "id") VALUES ('MyText', '2012-04-05', '2012-04-05 07:33:01', '2012-04-05 07:33:01', 298486374)
+  [1m[36m (100.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mTodoList Load (1.2ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "todo_lists" 
+Processing by TodoListsController#create as HTML
+  Parameters: {"todo_list"=>{"id"=>"980190962", "description"=>"MyText", "date"=>"2012-04-05", "completed"=>nil, "created_at"=>"2012-04-05 07:33:01 UTC", "updated_at"=>"2012-04-05 07:33:01 UTC"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "todo_lists" ("completed", "created_at", "date", "description", "updated_at") VALUES (?, ?, ?, ?, ?)  [["completed", false], ["created_at", Thu, 05 Apr 2012 07:33:01 UTC +00:00], ["date", nil], ["description", "MyText"], ["updated_at", Thu, 05 Apr 2012 07:33:01 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/todo_lists/980190963
+Completed 302 Found in 6ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "todo_lists" 
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "todo_lists" 
+Processing by TodoListsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "todo_lists" WHERE "todo_lists"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/todo_lists
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "todo_lists" [0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by TodoListsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  Rendered todo_lists/_form.html.erb (11.5ms)
+Completed 200 OK in 98ms (Views: 96.1ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by TodoListsController#index as HTML
+  [1m[36mTodoList Load (0.2ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" [0m
+Completed 200 OK in 10ms (Views: 8.2ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by TodoListsController#new as HTML
+  Rendered todo_lists/_form.html.erb (8.0ms)
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", "980190962"]]
+Completed 200 OK in 22ms (Views: 15.4ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by TodoListsController#update as HTML
+  Parameters: {"todo_list"=>{"id"=>"980190962", "description"=>"MyText", "date"=>"2012-04-05", "completed"=>nil, "created_at"=>"2012-04-05 07:33:01 UTC", "updated_at"=>"2012-04-05 07:33:01 UTC"}, "id"=>"980190962"}
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/todo_lists/980190962
+Completed 302 Found in 14ms (ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by ViewCompletedController#index as HTML
+  [1m[36mTodoList Load (0.4ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" [0m
+Completed 200 OK in 9ms (Views: 4.3ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "todo_lists"
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO "todo_lists" ("description", "date", "created_at", "updated_at", "id") VALUES ('MyText', '2012-04-05', '2012-04-05 07:35:04', '2012-04-05 07:35:04', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "todo_lists" ("description", "date", "created_at", "updated_at", "id") VALUES ('MyText', '2012-04-05', '2012-04-05 07:35:04', '2012-04-05 07:35:04', 298486374)
+  [1m[36m (146.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "todo_lists"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "todo_lists" ("description", "date", "created_at", "updated_at", "id") VALUES ('MyText', '2012-04-05', '2012-04-05 07:35:08', '2012-04-05 07:35:08', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "todo_lists" ("description", "date", "created_at", "updated_at", "id") VALUES ('MyText', '2012-04-05', '2012-04-05 07:35:08', '2012-04-05 07:35:08', 298486374)
+  [1m[36m (120.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTodoList Load (0.7ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "todo_lists" 
+Processing by TodoListsController#create as HTML
+  Parameters: {"todo_list"=>{"id"=>"980190962", "description"=>"MyText", "date"=>"2012-04-05", "completed"=>nil, "created_at"=>"2012-04-05 07:35:08 UTC", "updated_at"=>"2012-04-05 07:35:08 UTC"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "todo_lists" ("completed", "created_at", "date", "description", "updated_at") VALUES (?, ?, ?, ?, ?)  [["completed", false], ["created_at", Thu, 05 Apr 2012 07:35:08 UTC +00:00], ["date", nil], ["description", "MyText"], ["updated_at", Thu, 05 Apr 2012 07:35:08 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/todo_lists/980190963
+Completed 302 Found in 7ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "todo_lists" 
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "todo_lists" 
+Processing by TodoListsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "todo_lists" WHERE "todo_lists"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/todo_lists
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+  [1m[36m (1.2ms)[0m  [1mSELECT COUNT(*) FROM "todo_lists" [0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by TodoListsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  Rendered todo_lists/_form.html.erb (11.4ms)
+Completed 200 OK in 95ms (Views: 93.2ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by TodoListsController#index as HTML
+  [1m[36mTodoList Load (0.2ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" [0m
+Completed 200 OK in 10ms (Views: 7.7ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by TodoListsController#new as HTML
+  Rendered todo_lists/_form.html.erb (8.0ms)
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mTodoList Load (0.2ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", "980190962"]]
+Completed 200 OK in 19ms (Views: 5.3ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by TodoListsController#update as HTML
+  Parameters: {"todo_list"=>{"id"=>"980190962", "description"=>"MyText", "date"=>"2012-04-05", "completed"=>nil, "created_at"=>"2012-04-05 07:35:08 UTC", "updated_at"=>"2012-04-05 07:35:08 UTC"}, "id"=>"980190962"}
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/todo_lists/980190962
+Completed 302 Found in 11ms (ActiveRecord: 0.4ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by ViewCompletedController#index as HTML
+  [1m[36mTodoList Load (0.2ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" [0m
+Completed 200 OK in 20ms (Views: 10.6ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "todo_lists"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "todo_lists" ("description", "date", "created_at", "updated_at", "id") VALUES ('MyText', '2012-04-05', '2012-04-05 07:37:21', '2012-04-05 07:37:21', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "todo_lists" ("description", "date", "created_at", "updated_at", "id") VALUES ('MyText', '2012-04-05', '2012-04-05 07:37:21', '2012-04-05 07:37:21', 298486374)
+  [1m[36m (130.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.3ms)[0m  DELETE FROM "todo_lists"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "todo_lists" ("description", "date", "created_at", "updated_at", "id") VALUES ('MyText', '2012-04-05', '2012-04-05 07:37:25', '2012-04-05 07:37:25', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "todo_lists" ("description", "date", "created_at", "updated_at", "id") VALUES ('MyText', '2012-04-05', '2012-04-05 07:37:25', '2012-04-05 07:37:25', 298486374)
+  [1m[36m (94.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTodoList Load (0.7ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "todo_lists" 
+Processing by TodoListsController#create as HTML
+  Parameters: {"todo_list"=>{"id"=>"980190962", "description"=>"MyText", "date"=>"2012-04-05", "completed"=>nil, "created_at"=>"2012-04-05 07:37:25 UTC", "updated_at"=>"2012-04-05 07:37:25 UTC"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "todo_lists" ("completed", "created_at", "date", "description", "updated_at") VALUES (?, ?, ?, ?, ?)  [["completed", false], ["created_at", Thu, 05 Apr 2012 07:37:25 UTC +00:00], ["date", nil], ["description", "MyText"], ["updated_at", Thu, 05 Apr 2012 07:37:25 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/todo_lists/980190963
+Completed 302 Found in 7ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "todo_lists" 
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "todo_lists" 
+Processing by TodoListsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "todo_lists" WHERE "todo_lists"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/todo_lists
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "todo_lists" [0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by TodoListsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  Rendered todo_lists/_form.html.erb (11.7ms)
+Completed 200 OK in 96ms (Views: 94.6ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by TodoListsController#index as HTML
+  [1m[36mTodoList Load (0.2ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" [0m
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by TodoListsController#new as HTML
+  Rendered todo_lists/_form.html.erb (8.0ms)
+Completed 200 OK in 12ms (Views: 11.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", "980190962"]]
+Completed 200 OK in 10ms (Views: 8.0ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by TodoListsController#update as HTML
+  Parameters: {"todo_list"=>{"id"=>"980190962", "description"=>"MyText", "date"=>"2012-04-05", "completed"=>nil, "created_at"=>"2012-04-05 07:37:25 UTC", "updated_at"=>"2012-04-05 07:37:25 UTC"}, "id"=>"980190962"}
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/todo_lists/980190962
+Completed 302 Found in 21ms (ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by ViewCompletedController#index as HTML
+  [1m[36mTodoList Load (0.2ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" [0m
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "todo_lists"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "todo_lists" ("description", "date", "created_at", "updated_at", "id") VALUES ('MyText', '2012-04-05', '2012-04-05 07:37:45', '2012-04-05 07:37:45', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "todo_lists" ("description", "date", "created_at", "updated_at", "id") VALUES ('MyText', '2012-04-05', '2012-04-05 07:37:45', '2012-04-05 07:37:45', 298486374)
+  [1m[36m (114.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (31.5ms)[0m  INSERT INTO "todo_lists" ("completed", "created_at", "date", "description", "updated_at") VALUES (?, ?, ?, ?, ?)  [["completed", nil], ["created_at", Thu, 05 Apr 2012 07:37:45 UTC +00:00], ["date", nil], ["description", nil], ["updated_at", Thu, 05 Apr 2012 07:37:45 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "todo_lists"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "todo_lists" ("description", "date", "created_at", "updated_at", "id") VALUES ('MyText', '2012-04-05', '2012-04-05 07:37:49', '2012-04-05 07:37:49', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "todo_lists" ("description", "date", "created_at", "updated_at", "id") VALUES ('MyText', '2012-04-05', '2012-04-05 07:37:49', '2012-04-05 07:37:49', 298486374)
+  [1m[36m (108.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTodoList Load (0.4ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "todo_lists" 
+Processing by TodoListsController#create as HTML
+  Parameters: {"todo_list"=>{"id"=>"980190962", "description"=>"MyText", "date"=>"2012-04-05", "completed"=>nil, "created_at"=>"2012-04-05 07:37:49 UTC", "updated_at"=>"2012-04-05 07:37:49 UTC"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "todo_lists" ("completed", "created_at", "date", "description", "updated_at") VALUES (?, ?, ?, ?, ?)  [["completed", false], ["created_at", Thu, 05 Apr 2012 07:37:49 UTC +00:00], ["date", nil], ["description", "MyText"], ["updated_at", Thu, 05 Apr 2012 07:37:49 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/todo_lists/980190963
+Completed 302 Found in 6ms (ActiveRecord: 0.8ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "todo_lists" 
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "todo_lists" 
+Processing by TodoListsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "todo_lists" WHERE "todo_lists"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/todo_lists
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "todo_lists" [0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by TodoListsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  Rendered todo_lists/_form.html.erb (11.6ms)
+Completed 200 OK in 96ms (Views: 94.7ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by TodoListsController#index as HTML
+  [1m[36mTodoList Load (0.2ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" [0m
+Completed 200 OK in 10ms (Views: 8.2ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by TodoListsController#new as HTML
+  Rendered todo_lists/_form.html.erb (7.7ms)
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", "980190962"]]
+Completed 200 OK in 11ms (Views: 3.7ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by TodoListsController#update as HTML
+  Parameters: {"todo_list"=>{"id"=>"980190962", "description"=>"MyText", "date"=>"2012-04-05", "completed"=>nil, "created_at"=>"2012-04-05 07:37:49 UTC", "updated_at"=>"2012-04-05 07:37:49 UTC"}, "id"=>"980190962"}
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (4.9ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/todo_lists/980190962
+Completed 302 Found in 19ms (ActiveRecord: 5.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by ViewCompletedController#index as HTML
+  [1m[36mTodoList Load (0.2ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" [0m
+Completed 200 OK in 10ms (Views: 8.1ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "todo_lists"
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "todo_lists" ("description", "date", "created_at", "updated_at", "id") VALUES ('MyText', '2012-04-05', '2012-04-05 07:39:02', '2012-04-05 07:39:02', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "todo_lists" ("description", "date", "created_at", "updated_at", "id") VALUES ('MyText', '2012-04-05', '2012-04-05 07:39:02', '2012-04-05 07:39:02', 298486374)
+  [1m[36m (134.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (27.4ms)[0m  INSERT INTO "todo_lists" ("completed", "created_at", "date", "description", "updated_at") VALUES (?, ?, ?, ?, ?)  [["completed", nil], ["created_at", Thu, 05 Apr 2012 07:39:02 UTC +00:00], ["date", nil], ["description", nil], ["updated_at", Thu, 05 Apr 2012 07:39:02 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.4ms)[0m  DELETE FROM "todo_lists"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "todo_lists" ("description", "date", "created_at", "updated_at", "id") VALUES ('MyText', '2012-04-05', '2012-04-05 07:39:06', '2012-04-05 07:39:06', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "todo_lists" ("description", "date", "created_at", "updated_at", "id") VALUES ('MyText', '2012-04-05', '2012-04-05 07:39:06', '2012-04-05 07:39:06', 298486374)
+  [1m[36m (110.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTodoList Load (0.7ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "todo_lists" 
+Processing by TodoListsController#create as HTML
+  Parameters: {"todo_list"=>{"id"=>"980190962", "description"=>"MyText", "date"=>"2012-04-05", "completed"=>nil, "created_at"=>"2012-04-05 07:39:06 UTC", "updated_at"=>"2012-04-05 07:39:06 UTC"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "todo_lists" ("completed", "created_at", "date", "description", "updated_at") VALUES (?, ?, ?, ?, ?)  [["completed", false], ["created_at", Thu, 05 Apr 2012 07:39:06 UTC +00:00], ["date", nil], ["description", "MyText"], ["updated_at", Thu, 05 Apr 2012 07:39:06 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/todo_lists/980190963
+Completed 302 Found in 6ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "todo_lists" 
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "todo_lists" 
+Processing by TodoListsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "todo_lists" WHERE "todo_lists"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/todo_lists
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "todo_lists" [0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by TodoListsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  Rendered todo_lists/_form.html.erb (11.5ms)
+Completed 200 OK in 94ms (Views: 92.6ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by TodoListsController#index as HTML
+  [1m[36mTodoList Load (0.2ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" [0m
+Completed 200 OK in 11ms (Views: 9.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by TodoListsController#new as HTML
+  Rendered todo_lists/_form.html.erb (7.9ms)
+Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", "980190962"]]
+Completed 200 OK in 22ms (Views: 15.4ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by TodoListsController#update as HTML
+  Parameters: {"todo_list"=>{"id"=>"980190962", "description"=>"MyText", "date"=>"2012-04-05", "completed"=>nil, "created_at"=>"2012-04-05 07:39:06 UTC", "updated_at"=>"2012-04-05 07:39:06 UTC"}, "id"=>"980190962"}
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/todo_lists/980190962
+Completed 302 Found in 14ms (ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by ViewCompletedController#index as HTML
+  [1m[36mTodoList Load (0.3ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" [0m
+Completed 200 OK in 16ms (Views: 13.9ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.4ms)[0m  DELETE FROM "todo_lists"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "todo_lists" ("description", "date", "created_at", "updated_at", "id") VALUES ('MyText', '2012-04-05', '2012-04-05 07:42:51', '2012-04-05 07:42:51', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "todo_lists" ("description", "date", "created_at", "updated_at", "id") VALUES ('MyText', '2012-04-05', '2012-04-05 07:42:51', '2012-04-05 07:42:51', 298486374)
+  [1m[36m (119.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTodoList Load (0.3ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "todo_lists" 
+Processing by TodoListsController#create as HTML
+  Parameters: {"todo_list"=>{"id"=>"980190962", "description"=>"MyText", "date"=>"2012-04-05", "completed"=>nil, "created_at"=>"2012-04-05 07:42:51 UTC", "updated_at"=>"2012-04-05 07:42:51 UTC"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "todo_lists" ("completed", "created_at", "date", "description", "updated_at") VALUES (?, ?, ?, ?, ?)  [["completed", false], ["created_at", Thu, 05 Apr 2012 07:42:51 UTC +00:00], ["date", nil], ["description", "MyText"], ["updated_at", Thu, 05 Apr 2012 07:42:51 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/todo_lists/980190963
+Completed 302 Found in 6ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "todo_lists" 
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "todo_lists" 
+Processing by TodoListsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "todo_lists" WHERE "todo_lists"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/todo_lists
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "todo_lists" [0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by TodoListsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  Rendered todo_lists/_form.html.erb (11.4ms)
+Completed 200 OK in 94ms (Views: 92.7ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by TodoListsController#index as HTML
+  [1m[36mTodoList Load (0.2ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" [0m
+Completed 200 OK in 11ms (Views: 9.3ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by TodoListsController#new as HTML
+  Rendered todo_lists/_form.html.erb (8.0ms)
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", "980190962"]]
+Completed 200 OK in 11ms (Views: 8.9ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by TodoListsController#update as HTML
+  Parameters: {"todo_list"=>{"id"=>"980190962", "description"=>"MyText", "date"=>"2012-04-05", "completed"=>nil, "created_at"=>"2012-04-05 07:42:51 UTC", "updated_at"=>"2012-04-05 07:42:51 UTC"}, "id"=>"980190962"}
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/todo_lists/980190962
+Completed 302 Found in 16ms (ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Processing by ViewCompletedController#index as HTML
+  [1m[36mTodoList Load (0.2ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" [0m
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "todo_lists"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "todo_lists" ("description", "date", "created_at", "updated_at", "id") VALUES ('MyText', '2012-04-05', '2012-04-05 07:43:38', '2012-04-05 07:43:38', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "todo_lists" ("description", "date", "created_at", "updated_at", "id") VALUES ('MyText', '2012-04-05', '2012-04-05 07:43:38', '2012-04-05 07:43:38', 298486374)
+  [1m[36m (139.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (27.7ms)[0m  INSERT INTO "todo_lists" ("completed", "created_at", "date", "description", "updated_at") VALUES (?, ?, ?, ?, ?)  [["completed", nil], ["created_at", Thu, 05 Apr 2012 07:43:39 UTC +00:00], ["date", nil], ["description", nil], ["updated_at", Thu, 05 Apr 2012 07:43:39 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "todo_lists" ("completed", "created_at", "date", "description", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["completed", nil], ["created_at", Thu, 05 Apr 2012 07:43:39 UTC +00:00], ["date", nil], ["description", "Do stuff"], ["updated_at", Thu, 05 Apr 2012 07:43:39 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "todo_lists"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "todo_lists" ("description", "date", "created_at", "updated_at", "id") VALUES ('MyText', '2012-04-05', '2012-04-05 07:43:42', '2012-04-05 07:43:42', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "todo_lists" ("description", "date", "created_at", "updated_at", "id") VALUES ('MyText', '2012-04-05', '2012-04-05 07:43:42', '2012-04-05 07:43:42', 298486374)
+  [1m[36m (113.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mTodoList Load (0.7ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "todo_lists" 
+Processing by TodoListsController#create as HTML
+  Parameters: {"todo_list"=>{"id"=>"980190962", "description"=>"MyText", "date"=>"2012-04-05", "completed"=>nil, "created_at"=>"2012-04-05 07:43:42 UTC", "updated_at"=>"2012-04-05 07:43:42 UTC"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "todo_lists" ("completed", "created_at", "date", "description", "updated_at") VALUES (?, ?, ?, ?, ?)  [["completed", false], ["created_at", Thu, 05 Apr 2012 07:43:43 UTC +00:00], ["date", nil], ["description", "MyText"], ["updated_at", Thu, 05 Apr 2012 07:43:43 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/todo_lists/980190963
+Completed 302 Found in 7ms (ActiveRecord: 0.8ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "todo_lists" 
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "todo_lists" 
+Processing by TodoListsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "todo_lists" WHERE "todo_lists"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/todo_lists
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+  [1m[36m (1.2ms)[0m  [1mSELECT COUNT(*) FROM "todo_lists" [0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by TodoListsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  Rendered todo_lists/_form.html.erb (12.0ms)
+Completed 200 OK in 95ms (Views: 93.4ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by TodoListsController#index as HTML
+  [1m[36mTodoList Load (0.2ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" [0m
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by TodoListsController#new as HTML
+  Rendered todo_lists/_form.html.erb (8.0ms)
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTodoList Load (0.2ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", "980190962"]]
+Completed 200 OK in 17ms (Views: 14.9ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by TodoListsController#update as HTML
+  Parameters: {"todo_list"=>{"id"=>"980190962", "description"=>"MyText", "date"=>"2012-04-05", "completed"=>nil, "created_at"=>"2012-04-05 07:43:42 UTC", "updated_at"=>"2012-04-05 07:43:42 UTC"}, "id"=>"980190962"}
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/todo_lists/980190962
+Completed 302 Found in 14ms (ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by ViewCompletedController#index as HTML
+  [1m[36mTodoList Load (0.2ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" [0m
+Completed 200 OK in 22ms (Views: 8.0ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "todo_lists"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "todo_lists" ("description", "date", "created_at", "updated_at", "id") VALUES ('MyText', '2012-04-05', '2012-04-05 07:46:07', '2012-04-05 07:46:07', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "todo_lists" ("description", "date", "created_at", "updated_at", "id") VALUES ('MyText', '2012-04-05', '2012-04-05 07:46:07', '2012-04-05 07:46:07', 298486374)
+  [1m[36m (134.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (33.0ms)[0m  INSERT INTO "todo_lists" ("completed", "created_at", "date", "description", "updated_at") VALUES (?, ?, ?, ?, ?)  [["completed", nil], ["created_at", Thu, 05 Apr 2012 07:46:07 UTC +00:00], ["date", nil], ["description", nil], ["updated_at", Thu, 05 Apr 2012 07:46:07 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "todo_lists" ("completed", "created_at", "date", "description", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["completed", nil], ["created_at", Thu, 05 Apr 2012 07:46:07 UTC +00:00], ["date", Thu, 05 Apr 2012], ["description", nil], ["updated_at", Thu, 05 Apr 2012 07:46:07 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "todo_lists" ("completed", "created_at", "date", "description", "updated_at") VALUES (?, ?, ?, ?, ?)  [["completed", nil], ["created_at", Thu, 05 Apr 2012 07:46:07 UTC +00:00], ["date", nil], ["description", "Do stuff"], ["updated_at", Thu, 05 Apr 2012 07:46:07 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (3.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "todo_lists"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "todo_lists" ("description", "date", "created_at", "updated_at", "id") VALUES ('MyText', '2012-04-05', '2012-04-05 07:46:11', '2012-04-05 07:46:11', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "todo_lists" ("description", "date", "created_at", "updated_at", "id") VALUES ('MyText', '2012-04-05', '2012-04-05 07:46:11', '2012-04-05 07:46:11', 298486374)
+  [1m[36m (160.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTodoList Load (0.7ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "todo_lists" 
+Processing by TodoListsController#create as HTML
+  Parameters: {"todo_list"=>{"id"=>"980190962", "description"=>"MyText", "date"=>"2012-04-05", "completed"=>nil, "created_at"=>"2012-04-05 07:46:11 UTC", "updated_at"=>"2012-04-05 07:46:11 UTC"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "todo_lists" ("completed", "created_at", "date", "description", "updated_at") VALUES (?, ?, ?, ?, ?)  [["completed", false], ["created_at", Thu, 05 Apr 2012 07:46:11 UTC +00:00], ["date", nil], ["description", "MyText"], ["updated_at", Thu, 05 Apr 2012 07:46:11 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/todo_lists/980190963
+Completed 302 Found in 7ms (ActiveRecord: 0.8ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "todo_lists" 
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "todo_lists" 
+Processing by TodoListsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "todo_lists" WHERE "todo_lists"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/todo_lists
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "todo_lists" [0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by TodoListsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  Rendered todo_lists/_form.html.erb (12.2ms)
+Completed 200 OK in 96ms (Views: 94.1ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by TodoListsController#index as HTML
+  [1m[36mTodoList Load (0.2ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" [0m
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by TodoListsController#new as HTML
+  Rendered todo_lists/_form.html.erb (8.1ms)
+Completed 200 OK in 12ms (Views: 11.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", "980190962"]]
+Completed 200 OK in 18ms (Views: 15.9ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by TodoListsController#update as HTML
+  Parameters: {"todo_list"=>{"id"=>"980190962", "description"=>"MyText", "date"=>"2012-04-05", "completed"=>nil, "created_at"=>"2012-04-05 07:46:11 UTC", "updated_at"=>"2012-04-05 07:46:11 UTC"}, "id"=>"980190962"}
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/todo_lists/980190962
+Completed 302 Found in 17ms (ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by ViewCompletedController#index as HTML
+  [1m[36mTodoList Load (0.2ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" [0m
+Completed 200 OK in 22ms (Views: 8.1ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "todo_lists"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "todo_lists" ("description", "date", "created_at", "updated_at", "id") VALUES ('MyText', '2012-04-05', '2012-04-05 07:48:24', '2012-04-05 07:48:24', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "todo_lists" ("description", "date", "created_at", "updated_at", "id") VALUES ('MyText', '2012-04-05', '2012-04-05 07:48:24', '2012-04-05 07:48:24', 298486374)
+  [1m[36m (139.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (27.5ms)[0m  INSERT INTO "todo_lists" ("completed", "created_at", "date", "description", "updated_at") VALUES (?, ?, ?, ?, ?)  [["completed", nil], ["created_at", Thu, 05 Apr 2012 07:48:24 UTC +00:00], ["date", nil], ["description", nil], ["updated_at", Thu, 05 Apr 2012 07:48:24 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "todo_lists" ("completed", "created_at", "date", "description", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["completed", nil], ["created_at", Thu, 05 Apr 2012 07:48:24 UTC +00:00], ["date", Thu, 05 Apr 2012], ["description", "Do something"], ["updated_at", Thu, 05 Apr 2012 07:48:24 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "todo_lists" ("completed", "created_at", "date", "description", "updated_at") VALUES (?, ?, ?, ?, ?)  [["completed", nil], ["created_at", Thu, 05 Apr 2012 07:48:24 UTC +00:00], ["date", Thu, 05 Apr 2012], ["description", nil], ["updated_at", Thu, 05 Apr 2012 07:48:24 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "todo_lists" ("completed", "created_at", "date", "description", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["completed", nil], ["created_at", Thu, 05 Apr 2012 07:48:24 UTC +00:00], ["date", nil], ["description", "Do stuff"], ["updated_at", Thu, 05 Apr 2012 07:48:24 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.4ms)[0m  DELETE FROM "todo_lists"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "todo_lists" ("description", "date", "created_at", "updated_at", "id") VALUES ('MyText', '2012-04-05', '2012-04-05 07:48:28', '2012-04-05 07:48:28', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "todo_lists" ("description", "date", "created_at", "updated_at", "id") VALUES ('MyText', '2012-04-05', '2012-04-05 07:48:28', '2012-04-05 07:48:28', 298486374)
+  [1m[36m (126.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTodoList Load (0.7ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "todo_lists" 
+Processing by TodoListsController#create as HTML
+  Parameters: {"todo_list"=>{"id"=>"980190962", "description"=>"MyText", "date"=>"2012-04-05", "completed"=>nil, "created_at"=>"2012-04-05 07:48:28 UTC", "updated_at"=>"2012-04-05 07:48:28 UTC"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "todo_lists" ("completed", "created_at", "date", "description", "updated_at") VALUES (?, ?, ?, ?, ?)  [["completed", false], ["created_at", Thu, 05 Apr 2012 07:48:28 UTC +00:00], ["date", nil], ["description", "MyText"], ["updated_at", Thu, 05 Apr 2012 07:48:28 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/todo_lists/980190963
+Completed 302 Found in 6ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "todo_lists" 
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "todo_lists" 
+Processing by TodoListsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "todo_lists" WHERE "todo_lists"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/todo_lists
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+  [1m[36m (1.4ms)[0m  [1mSELECT COUNT(*) FROM "todo_lists" [0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by TodoListsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  Rendered todo_lists/_form.html.erb (11.8ms)
+Completed 200 OK in 95ms (Views: 93.6ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by TodoListsController#index as HTML
+  [1m[36mTodoList Load (0.2ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" [0m
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by TodoListsController#new as HTML
+  Rendered todo_lists/_form.html.erb (8.5ms)
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", "980190962"]]
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by TodoListsController#update as HTML
+  Parameters: {"todo_list"=>{"id"=>"980190962", "description"=>"MyText", "date"=>"2012-04-05", "completed"=>nil, "created_at"=>"2012-04-05 07:48:28 UTC", "updated_at"=>"2012-04-05 07:48:28 UTC"}, "id"=>"980190962"}
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/todo_lists/980190962
+Completed 302 Found in 10ms (ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (5.9ms)[0m  begin transaction
+Processing by ViewCompletedController#index as HTML
+  [1m[36mTodoList Load (0.2ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" [0m
+Completed 200 OK in 19ms (Views: 17.8ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "todo_lists"
+  [1m[36mFixture Insert (0.5ms)[0m  [1mINSERT INTO "todo_lists" ("description", "date", "created_at", "updated_at", "id") VALUES ('MyText', '2012-04-05', '2012-05-06 05:22:58', '2012-05-06 05:22:58', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "todo_lists" ("description", "date", "created_at", "updated_at", "id") VALUES ('MyText', '2012-04-05', '2012-05-06 05:22:58', '2012-05-06 05:22:58', 298486374)
+  [1m[36m (179.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (22.1ms)[0m  INSERT INTO "todo_lists" ("completed", "created_at", "date", "description", "updated_at") VALUES (?, ?, ?, ?, ?)  [["completed", nil], ["created_at", Sun, 06 May 2012 05:22:58 UTC +00:00], ["date", nil], ["description", nil], ["updated_at", Sun, 06 May 2012 05:22:58 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "todo_lists" ("completed", "created_at", "date", "description", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["completed", nil], ["created_at", Sun, 06 May 2012 05:22:58 UTC +00:00], ["date", Sun, 06 May 2012], ["description", "Do something"], ["updated_at", Sun, 06 May 2012 05:22:58 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "todo_lists" ("completed", "created_at", "date", "description", "updated_at") VALUES (?, ?, ?, ?, ?)  [["completed", nil], ["created_at", Sun, 06 May 2012 05:22:58 UTC +00:00], ["date", Sun, 06 May 2012], ["description", nil], ["updated_at", Sun, 06 May 2012 05:22:58 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "todo_lists" ("completed", "created_at", "date", "description", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["completed", nil], ["created_at", Sun, 06 May 2012 05:22:58 UTC +00:00], ["date", nil], ["description", "Do stuff"], ["updated_at", Sun, 06 May 2012 05:22:58 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "todo_lists"
+  [1m[36mFixture Insert (3.4ms)[0m  [1mINSERT INTO "todo_lists" ("description", "date", "created_at", "updated_at", "id") VALUES ('MyText', '2012-04-05', '2012-05-06 05:23:04', '2012-05-06 05:23:04', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "todo_lists" ("description", "date", "created_at", "updated_at", "id") VALUES ('MyText', '2012-04-05', '2012-05-06 05:23:04', '2012-05-06 05:23:04', 298486374)
+  [1m[36m (167.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by PythonRunnerController#index as HTML
+  Rendered python_runner/index.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 114ms (Views: 112.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by PythonRunnerController#run_python_code as HTML
+Completed 500 Internal Server Error in 1ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTodoList Load (0.4ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "todo_lists" 
+Processing by TodoListsController#create as HTML
+  Parameters: {"todo_list"=>{"id"=>"980190962", "description"=>"MyText", "date"=>"2012-04-05", "completed"=>nil, "created_at"=>"2012-05-06 05:23:04 UTC", "updated_at"=>"2012-05-06 05:23:04 UTC"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (5.7ms)[0m  INSERT INTO "todo_lists" ("completed", "created_at", "date", "description", "updated_at") VALUES (?, ?, ?, ?, ?)  [["completed", false], ["created_at", Sun, 06 May 2012 05:23:04 UTC +00:00], ["date", nil], ["description", "MyText"], ["updated_at", Sun, 06 May 2012 05:23:04 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/todo_lists/980190963
+Completed 302 Found in 19ms (ActiveRecord: 6.0ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "todo_lists" 
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTodoList Load (0.2ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "todo_lists" 
+Processing by TodoListsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "todo_lists" WHERE "todo_lists"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/todo_lists
+Completed 302 Found in 21ms (ActiveRecord: 0.6ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "todo_lists" [0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by TodoListsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  Rendered todo_lists/_form.html.erb (49.9ms)
+Completed 200 OK in 173ms (Views: 166.7ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by TodoListsController#index as HTML
+  [1m[36mTodoList Load (0.2ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" [0m
+Completed 200 OK in 42ms (Views: 39.5ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by TodoListsController#new as HTML
+  Rendered todo_lists/_form.html.erb (16.6ms)
+Completed 200 OK in 41ms (Views: 29.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTodoList Load (0.2ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", "980190962"]]
+Completed 200 OK in 25ms (Views: 23.3ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTodoList Load (0.2ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by TodoListsController#update as HTML
+  Parameters: {"todo_list"=>{"id"=>"980190962", "description"=>"MyText", "date"=>"2012-04-05", "completed"=>nil, "created_at"=>"2012-05-06 05:23:04 UTC", "updated_at"=>"2012-05-06 05:23:04 UTC"}, "id"=>"980190962"}
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.6ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/todo_lists/980190962
+Completed 302 Found in 47ms (ActiveRecord: 0.8ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by ViewCompletedController#index as HTML
+  [1m[36mTodoList Load (0.2ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" [0m
+Completed 200 OK in 13ms (Views: 7.9ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "todo_lists"
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO "todo_lists" ("description", "date", "created_at", "updated_at", "id") VALUES ('MyText', '2012-04-05', '2012-05-06 05:24:32', '2012-05-06 05:24:32', 980190962)[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "todo_lists" ("description", "date", "created_at", "updated_at", "id") VALUES ('MyText', '2012-04-05', '2012-05-06 05:24:32', '2012-05-06 05:24:32', 298486374)
+  [1m[36m (164.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.4ms)[0m  INSERT INTO "todo_lists" ("completed", "created_at", "date", "description", "updated_at") VALUES (?, ?, ?, ?, ?)  [["completed", nil], ["created_at", Sun, 06 May 2012 05:24:32 UTC +00:00], ["date", nil], ["description", nil], ["updated_at", Sun, 06 May 2012 05:24:32 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "todo_lists" ("completed", "created_at", "date", "description", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["completed", nil], ["created_at", Sun, 06 May 2012 05:24:32 UTC +00:00], ["date", Sun, 06 May 2012], ["description", "Do something"], ["updated_at", Sun, 06 May 2012 05:24:32 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.6ms)[0m  INSERT INTO "todo_lists" ("completed", "created_at", "date", "description", "updated_at") VALUES (?, ?, ?, ?, ?)  [["completed", nil], ["created_at", Sun, 06 May 2012 05:24:32 UTC +00:00], ["date", Sun, 06 May 2012], ["description", nil], ["updated_at", Sun, 06 May 2012 05:24:32 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "todo_lists" ("completed", "created_at", "date", "description", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["completed", nil], ["created_at", Sun, 06 May 2012 05:24:32 UTC +00:00], ["date", nil], ["description", "Do stuff"], ["updated_at", Sun, 06 May 2012 05:24:32 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "todo_lists"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "todo_lists" ("description", "date", "created_at", "updated_at", "id") VALUES ('MyText', '2012-04-05', '2012-05-06 05:24:38', '2012-05-06 05:24:38', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "todo_lists" ("description", "date", "created_at", "updated_at", "id") VALUES ('MyText', '2012-04-05', '2012-05-06 05:24:38', '2012-05-06 05:24:38', 298486374)
+  [1m[36m (158.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by PythonRunnerController#index as HTML
+  Rendered python_runner/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 108ms (Views: 107.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by PythonRunnerController#run_python_code as HTML
+Completed 500 Internal Server Error in 1ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTodoList Load (0.3ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (1.7ms)[0m  SELECT COUNT(*) FROM "todo_lists" 
+Processing by TodoListsController#create as HTML
+  Parameters: {"todo_list"=>{"id"=>"980190962", "description"=>"MyText", "date"=>"2012-04-05", "completed"=>nil, "created_at"=>"2012-05-06 05:24:38 UTC", "updated_at"=>"2012-05-06 05:24:38 UTC"}}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "todo_lists" ("completed", "created_at", "date", "description", "updated_at") VALUES (?, ?, ?, ?, ?)  [["completed", false], ["created_at", Sun, 06 May 2012 05:24:38 UTC +00:00], ["date", nil], ["description", "MyText"], ["updated_at", Sun, 06 May 2012 05:24:38 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/todo_lists/980190963
+Completed 302 Found in 20ms (ActiveRecord: 0.9ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "todo_lists" 
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTodoList Load (0.2ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "todo_lists" 
+Processing by TodoListsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "todo_lists" WHERE "todo_lists"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/todo_lists
+Completed 302 Found in 6ms (ActiveRecord: 0.7ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "todo_lists" [0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by TodoListsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  Rendered todo_lists/_form.html.erb (35.2ms)
+Completed 200 OK in 106ms (Views: 97.9ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTodoList Load (0.7ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by TodoListsController#index as HTML
+  [1m[36mTodoList Load (0.2ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" [0m
+Completed 200 OK in 27ms (Views: 24.9ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTodoList Load (0.3ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by TodoListsController#new as HTML
+  Rendered todo_lists/_form.html.erb (23.3ms)
+Completed 200 OK in 40ms (Views: 38.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.9ms)[0m  begin transaction
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", "980190962"]]
+Completed 200 OK in 14ms (Views: 11.6ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTodoList Load (0.2ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by TodoListsController#update as HTML
+  Parameters: {"todo_list"=>{"id"=>"980190962", "description"=>"MyText", "date"=>"2012-04-05", "completed"=>nil, "created_at"=>"2012-05-06 05:24:38 UTC", "updated_at"=>"2012-05-06 05:24:38 UTC"}, "id"=>"980190962"}
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/todo_lists/980190962
+Completed 302 Found in 34ms (ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by ViewCompletedController#index as HTML
+  [1m[36mTodoList Load (0.2ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" [0m
+Completed 200 OK in 21ms (Views: 11.1ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "todo_lists"
+  [1m[36mFixture Insert (4.2ms)[0m  [1mINSERT INTO "todo_lists" ("description", "date", "created_at", "updated_at", "id") VALUES ('MyText', '2012-04-05', '2012-05-06 05:25:20', '2012-05-06 05:25:20', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "todo_lists" ("description", "date", "created_at", "updated_at", "id") VALUES ('MyText', '2012-04-05', '2012-05-06 05:25:20', '2012-05-06 05:25:20', 298486374)
+  [1m[36m (158.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.4ms)[0m  INSERT INTO "todo_lists" ("completed", "created_at", "date", "description", "updated_at") VALUES (?, ?, ?, ?, ?)  [["completed", nil], ["created_at", Sun, 06 May 2012 05:25:21 UTC +00:00], ["date", nil], ["description", nil], ["updated_at", Sun, 06 May 2012 05:25:21 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "todo_lists" ("completed", "created_at", "date", "description", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["completed", nil], ["created_at", Sun, 06 May 2012 05:25:21 UTC +00:00], ["date", Sun, 06 May 2012], ["description", "Do something"], ["updated_at", Sun, 06 May 2012 05:25:21 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.7ms)[0m  INSERT INTO "todo_lists" ("completed", "created_at", "date", "description", "updated_at") VALUES (?, ?, ?, ?, ?)  [["completed", nil], ["created_at", Sun, 06 May 2012 05:25:21 UTC +00:00], ["date", Sun, 06 May 2012], ["description", nil], ["updated_at", Sun, 06 May 2012 05:25:21 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "todo_lists" ("completed", "created_at", "date", "description", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["completed", nil], ["created_at", Sun, 06 May 2012 05:25:21 UTC +00:00], ["date", nil], ["description", "Do stuff"], ["updated_at", Sun, 06 May 2012 05:25:21 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "todo_lists"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "todo_lists" ("description", "date", "created_at", "updated_at", "id") VALUES ('MyText', '2012-04-05', '2012-05-06 05:25:27', '2012-05-06 05:25:27', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "todo_lists" ("description", "date", "created_at", "updated_at", "id") VALUES ('MyText', '2012-04-05', '2012-05-06 05:25:27', '2012-05-06 05:25:27', 298486374)
+  [1m[36m (159.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by PythonRunnerController#index as HTML
+  Rendered python_runner/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 64ms (Views: 62.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTodoList Load (0.4ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "todo_lists" 
+Processing by TodoListsController#create as HTML
+  Parameters: {"todo_list"=>{"id"=>"980190962", "description"=>"MyText", "date"=>"2012-04-05", "completed"=>nil, "created_at"=>"2012-05-06 05:25:27 UTC", "updated_at"=>"2012-05-06 05:25:27 UTC"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "todo_lists" ("completed", "created_at", "date", "description", "updated_at") VALUES (?, ?, ?, ?, ?)  [["completed", false], ["created_at", Sun, 06 May 2012 05:25:27 UTC +00:00], ["date", nil], ["description", "MyText"], ["updated_at", Sun, 06 May 2012 05:25:27 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/todo_lists/980190963
+Completed 302 Found in 14ms (ActiveRecord: 0.8ms)
+  [1m[35m (5.5ms)[0m  SELECT COUNT(*) FROM "todo_lists" 
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTodoList Load (0.2ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "todo_lists" 
+Processing by TodoListsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (15.6ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "todo_lists" WHERE "todo_lists"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/todo_lists
+Completed 302 Found in 20ms (ActiveRecord: 16.1ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "todo_lists" [0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by TodoListsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mTodoList Load (0.2ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  Rendered todo_lists/_form.html.erb (42.6ms)
+Completed 200 OK in 157ms (Views: 147.6ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTodoList Load (0.3ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by TodoListsController#index as HTML
+  [1m[36mTodoList Load (0.2ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" [0m
+Completed 200 OK in 15ms (Views: 12.9ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTodoList Load (0.5ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by TodoListsController#new as HTML
+  Rendered todo_lists/_form.html.erb (22.1ms)
+Completed 200 OK in 40ms (Views: 39.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTodoList Load (0.2ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by TodoListsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", "980190962"]]
+Completed 200 OK in 20ms (Views: 6.9ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTodoList Load (0.1ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by TodoListsController#update as HTML
+  Parameters: {"todo_list"=>{"id"=>"980190962", "description"=>"MyText", "date"=>"2012-04-05", "completed"=>nil, "created_at"=>"2012-05-06 05:25:27 UTC", "updated_at"=>"2012-05-06 05:25:27 UTC"}, "id"=>"980190962"}
+  [1m[35mTodoList Load (0.1ms)[0m  SELECT "todo_lists".* FROM "todo_lists" WHERE "todo_lists"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (7.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/todo_lists/980190962
+Completed 302 Found in 34ms (ActiveRecord: 7.5ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+Processing by ViewCompletedController#index as HTML
+  [1m[36mTodoList Load (0.2ms)[0m  [1mSELECT "todo_lists".* FROM "todo_lists" [0m
+Completed 200 OK in 32ms (Views: 27.7ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction

@@ -1,0 +1,23 @@
+<h1>Completed:</h1>
+
+<table border="1">
+<tr bgcolor="black" style="color:white">
+  <th>Description</th>
+  <th>Date</th>
+</tr>
+                        
+<% @todo_lists.each do |todo_list| %>
+  <% if todo_list.completed %>
+    <% if @odd_element %><tr bgcolor="#0080FF"><% else %><tr bgcolor="#2ECCFA"><% end %>
+      <td><%= todo_list.description %></td>
+      <td><%= todo_list.date %></td>
+    </tr>
+  <% @odd_element = !@odd_element%>
+  <% end %>
+<% end %>
+</table>
+                                                    
+<br />
+                                                    
+<%= link_to 'Back', :back %>
+                                                    
